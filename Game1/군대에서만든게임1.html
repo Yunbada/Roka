@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title> 군대에서 만든 게임1 </title>
+    <style type = "text/css">
+            canvas {border:1px solid black;}
+    </style>
+
+</head>
+<body>
+
+
+<p> 야호~ </p>
+	<canvas id="Canvas" width="800" height="608"></canvas>
+	<p> 여기에서 꿀팁은, 이렇게 웹 브라우저와 메모장을 같이 켜놓고 메모장에서는 저장( Ctrl+S), 브라우저에서는 새로고침(F5) 누르면 빠르게 확인할 수 있습니다.</p>
+
+	<script>
+
+	let player_x=0;
+	const FPS=60;
+        const canvas = document.getElementById('Canvas');
+        const ctx = canvas.getContext("2d");
+
+    // 아래 코드 세 줄은 지워도 됩니다.
+	ctx.fillRect(64,96,32,16);
+	ctx.strokeStyle = "rgba(255,0,0,1)";
+	ctx.strokeRect(320, 320, 32, 32);
+
+	function game()
+	{
+  		step();
+		draw();
+	}
+	function step()
+	{
+		player_x+=1;
+	}
+	function draw()
+	{
+    		ctx.clearRect(0,0,canvas.width,canvas.height);
+		ctx.fillRect(player_x,400,32,32);
+	}
+	setInterval(game,1000/FPS);
+
+	</script>
+
+
+
+</body>
+</html>
+
